@@ -1,2 +1,2 @@
-# gms_project
-Gambia Meteorological Services
+# How is the weather!
+
