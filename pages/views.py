@@ -6,7 +6,6 @@ API_KEY=os.environ.get('OWM_API')
 owm = pyowm.OWM(API_KEY)
 # fc = owm.three_hours_forecast('Banjul,GMB')
 # current_weather = owm.weather_at_place('Banjul,GMB')
-
 def home(request):
     #handle search field
     if 'city' in request.GET:
@@ -81,4 +80,3 @@ def home(request):
             'city':city
         }
         return render(request, 'pages/home.html', context)
-        
