@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from . models import News, Project
 import os
 import requests
 import pyowm
@@ -19,7 +20,7 @@ def home(request):
         weather_now ={
             'temp':round(w.get_temperature('celsius')['temp']),
             'wind_speed': w.get_wind()['speed'],
-            'wind_deg':w.get_wind()['deg'],
+            'wind_deg':w.get_wind(),
             'status': w.get_detailed_status(),
             'humidity':w.get_humidity(),
             'icon':w.get_weather_icon_url(),
@@ -55,7 +56,7 @@ def home(request):
         weather_now ={
             'temp':round(w.get_temperature('celsius')['temp']),
             'wind_speed': w.get_wind()['speed'],
-            'wind_deg':w.get_wind()['deg'],
+            'wind_deg':w.get_wind(),
             'status': w.get_detailed_status(),
             'humidity':w.get_humidity(),
             'icon':w.get_weather_icon_url(),
@@ -80,3 +81,34 @@ def home(request):
             'city':city
         }
         return render(request, 'pages/home.html', context)
+
+def news(request):
+    news = News.objects.all()
+    context = {
+        'news':news
+    }
+    return render(request, 'pages/news.html', context)
+def detail_news(request, id):
+    news = get_object_or_404(News, id=id)
+    context = {
+        'news':news
+    }
+    return render(request, 'pages/news_detail.html', context)
+
+def projects(request):
+    projects = Project.objects.all()
+    context = {
+        'projects':projects
+    }
+    return render(request, 'pages/projects.html', context)
+
+def detail_project(request, id):
+    project = get_object_or_404(Project, id=id)
+    context = {
+        'project':project
+    }
+    return render(request, 'pages/detail_project.html', context)
+
+
+def contacts(request):
+    return render(request, 'pages/contact.html')
