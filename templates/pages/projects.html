@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
     <main class="main-content">
-				<div class="container">
+				<div class="container-fluid">
 					<div class="breadcrumb">
 						<a href="{% url 'home' %}">Home</a>
 						<span>Projects</span>
@@ -10,7 +10,7 @@
 				</div>
 
 				<div class="fullwidth-block">
-					<div class="container">
+					<div class="container-fluid">
 						<div class="row">
                         {% for project in projects %}
 							<div class="col-md-6">
@@ -18,7 +18,7 @@
 									<div class="photo-preview photo-detail" data-bg-image="{{project.image.url}}"></div>
 									<div class="photo-details">
 										<h3 class="photo-title"><a href="#">{{project.title}}</a></h3>
-										<p>{{project.content}}</p>
+										<p>{{project.content|truncatechars:"200"|safe}}</p>
                                         <a href="{% url 'detail_project' project.id %}" class="button">Read more</a>
 										{% comment %} <div class="star-rating" title="Rated 1 out of 5"><span style="width:60%"><strong class="rating">1</strong> out of 5</span></div> {% endcomment %}
 									</div>

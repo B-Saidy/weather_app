@@ -15,11 +15,11 @@
 </head>
 <body>
     <div class="site-header">
-				<div class="container">
+				<div class="container-fluid">
 					<a href=" {% url 'home' %} " class="branding">
 						<img src="images/logo.png" alt="" class="logo">
 						<div class="logo-type">
-							<h1 class="site-title">GM Weather Inc</h1>
+							<h1 class="site-title">GM Met Services</h1>
 							<small class="site-description">How's the weather?</small>
 						</div>
 					</a>
@@ -28,10 +28,31 @@
 					<div class="main-navigation">
 						<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
 						<ul class="menu">
-							<li class="menu-item current-menu-item"><a href=" {% url 'home' %} ">Home</a></li>
-							<li class="menu-item"><a href="{% url 'news' %}">News</a></li>
-							<li class="menu-item"><a href="{% url 'projects' %}">Projects</a></li>
-							<li class="menu-item"><a href="contact.html">Contact</a></li>
+							<li 
+							{% if "/" == request.path %}
+								class="menu-item current-menu-item"
+							{% else %} 
+								class="menu-item"
+							{% endif %}
+							><a href=" {% url 'home' %} ">Home</a></li>
+							<li {% if "news" in request.path %}
+								class="menu-item current-menu-item"
+							{% else %} 
+								class="menu-item"
+							{% endif %}
+							>
+								<a href="{% url 'news' %}">News</a>
+							</li>				
+							<li
+							{% if "projects" in request.path %}
+								class="menu-item current-menu-item"
+							{% else %} 
+								class="menu-item"
+							{% endif %}
+							 ><a href="{% url 'projects' %}">Projects</a></li>
+							<li class="menu-item"><a href="#">Partners</a></li>
+							<li class="menu-item"><a href="contact.html">Contact Us</a></li>
+
 						</ul> <!-- .menu -->
 					</div> <!-- .main-navigation -->
 

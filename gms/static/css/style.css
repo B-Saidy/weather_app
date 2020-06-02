@@ -12,6 +12,19 @@
   height: 100%;
 }
 
+#daily-forecast {
+  text-align: center;
+  text-decoration: solid;
+  text-transform: uppercase;
+
+}
+
+#forecast_vid {
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 8px;
+}
+
 article,
 aside,
 details,

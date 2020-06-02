@@ -2,17 +2,17 @@
 {% load static %}
 {% block content %}
         <main class="main-content">
-				<div class="container">
+				<div class="container-fluid">
 					<div class="breadcrumb">
 						<a href="{% url 'home'%}">Home</a>
-						<a href="{% url 'news'%}">News</a>
-						<span>{{news.title}}</span>
+						<a href="{% url 'projects'%}">Projects</a>
+						<span>{{project.title}}</span>
 					</div>
 				</div>
 				
 
 				<div class="fullwidth-block">
-					<div class="container">
+					<div class="container-fluid">
 						<div class="row">
 							<div class="content col-md-8">
 								<div class="post single">
@@ -20,7 +20,7 @@
 									<div class="featured-image"><img src="{{project.image.url}}" alt=""></div>
 									
 									<div class="entry-content">
-                                    <p> {{project.content}}</p>
+                                    <p> {{project.content|safe}}</p>
 									</div>
 
 								</div>
@@ -35,30 +35,6 @@
 										<li><a href="#">Voluptatum deleniti corrupti</a></li>
 										<li><a href="#">Wuos dolores excepturi sint</a></li>
 										<li><a href="#">Occaecati provident dolor</a></li>
-									</ul>
-								</div>
-
-								<div class="widget">
-									<h3 class="widget-title">Categories</h3>
-									<ul class="arrow-list">
-										<li><a href="#">Nemo enim ipsam</a></li>
-										<li><a href="#">Voluptatem voluptas</a></li>
-										<li><a href="#">Aspernatur aut odit</a></li>
-										<li><a href="#">Consequuntur magni</a></li>
-										<li><a href="#">Dolores ratione</a></li>
-										<li><a href="#">Voluptatem nesciunt</a></li>
-										<li><a href="#">Neque porro quisquam</a></li>
-										<li><a href="#">Dolorem ipsum quia</a></li>
-									</ul>
-								</div>
-
-								<div class="widget top-rated">
-									<h3 class="widget-title">Top rated posts</h3>
-									<ul>
-										<li><h3 class="entry-title"><a href="#">Doloremque laudantium lorem</a></h3><div class="rating"><strong>5.5</strong> (759 rates)</div></li>
-										<li><h3 class="entry-title"><a href="#">Doloremque laudantium lorem</a></h3><div class="rating"><strong>5.5</strong> (759 rates)</div></li>
-										<li><h3 class="entry-title"><a href="#">Doloremque laudantium lorem</a></h3><div class="rating"><strong>5.5</strong> (759 rates)</div></li>
-										<li><h3 class="entry-title"><a href="#">Doloremque laudantium lorem</a></h3><div class="rating"><strong>5.5</strong> (759 rates)</div></li>
 									</ul>
 								</div>
 							</div>

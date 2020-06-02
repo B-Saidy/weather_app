@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
     <main class="main-content">
-				<div class="container">
+				<div class="container-fluid">
 					<div class="breadcrumb">
 						<a href="{% url 'home'%}">Home</a>
 						<a href="{% url 'news'%}">News</a>
@@ -12,7 +12,7 @@
 				
 
 				<div class="fullwidth-block">
-					<div class="container">
+					<div class="container-fluid">
 						<div class="row">
 							<div class="content col-md-8">
 								<div class="post single">
@@ -20,7 +20,7 @@
 									<div class="featured-image"><img src="{{news.image.url}}" alt=""></div>
 									
 									<div class="entry-content">
-                                    <p> {{news.content}}</p>
+										<p> {{news.content|safe}}</p>
 									</div>
 
 								</div>

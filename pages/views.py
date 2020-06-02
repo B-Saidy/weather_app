@@ -29,7 +29,7 @@ def home(request):
             }
             c_weather.append(weather_now)
             # getting a three_hourly weather forecast 
-            f = list(fc.get_forecast())[:6]
+            f = list(fc.get_forecast())[:8]
             weather_data = []
             for weather in f:
                 weather_con = {
@@ -65,7 +65,7 @@ def home(request):
             }
             c_weather.append(weather_now)
             # getting a three_hourly weather forecast 
-            f = list(fc.get_forecast())[:6]
+            f = list(fc.get_forecast())[:8]
             weather_data = []
             for weather in f:
                 weather_con = {

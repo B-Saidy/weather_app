@@ -3,7 +3,7 @@
 
 {% block content %}
     <main class="main-content">
-				<div class="container">
+				<div class="container-fluid">
 					<div class="breadcrumb">
 						<a href="{% url 'home' %}">Home</a>
 						<span>News</span>
@@ -12,7 +12,7 @@
 				
 
 				<div class="fullwidth-block">
-					<div class="container">
+					<div class="container-fluid">
 						<div class="row">
 							<div class="content col-md-8">
                             {% for news in news %}
@@ -20,14 +20,14 @@
                                     <p class="mb-2">{{news.date_posted}} <i>by</i> <span><i><small>{{news.author}}</small></i></span></p>
 									<h2 class="entry-title">{{news.title}}</h2>
 									<div class="featured-image"><img src="{{news.image.url}}" alt=""></div>
-									<p>{{news.content|truncatechars:"200"}}</p>
+									<p>{{news.content|truncatechars:"200"|safe}}</p>
 									<a href="{% url 'detail_news' news.id %}" class="button">Read more</a>
 								</div>
                             {% endfor %}
 							</div>
 							<div class="sidebar col-md-3 col-md-offset-1">
 								<div class="widget">
-									<h3 class="widget-title">Hot News</h3>
+									<h3 class="widget-title">Latest News</h3>
 									<ul class="arrow-list">
 										<li><a href="#">Accusamus dignissimos</a></li>
 										<li><a href="#">Ducimus praesentium</a></li>
@@ -37,29 +37,6 @@
 									</ul>
 								</div>
 
-								<div class="widget">
-									<h3 class="widget-title">Categories</h3>
-									<ul class="arrow-list">
-										<li><a href="#">Nemo enim ipsam</a></li>
-										<li><a href="#">Voluptatem voluptas</a></li>
-										<li><a href="#">Aspernatur aut odit</a></li>
-										<li><a href="#">Consequuntur magni</a></li>
-										<li><a href="#">Dolores ratione</a></li>
-										<li><a href="#">Voluptatem nesciunt</a></li>
-										<li><a href="#">Neque porro quisquam</a></li>
-										<li><a href="#">Dolorem ipsum quia</a></li>
-									</ul>
-								</div>
-
-								<div class="widget top-rated">
-									<h3 class="widget-title">Top rated posts</h3>
-									<ul>
-										<li><h3 class="entry-title"><a href="#">Doloremque laudantium lorem</a></h3><div class="rating"><strong>5.5</strong> (759 rates)</div></li>
-										<li><h3 class="entry-title"><a href="#">Doloremque laudantium lorem</a></h3><div class="rating"><strong>5.5</strong> (759 rates)</div></li>
-										<li><h3 class="entry-title"><a href="#">Doloremque laudantium lorem</a></h3><div class="rating"><strong>5.5</strong> (759 rates)</div></li>
-										<li><h3 class="entry-title"><a href="#">Doloremque laudantium lorem</a></h3><div class="rating"><strong>5.5</strong> (759 rates)</div></li>
-									</ul>
-								</div>
 							</div>
 						</div>
 					</div>

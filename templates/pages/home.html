@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-    <div class="hero" data-bg-image="{% static 'img/banner.png' %}">
+    <div class="hero" data-bg-image="{% static 'img/arch.jpg' %}">
         <div class="container">
             <form action=" {% url 'home'%}" method='GET' class="find-location">
                 <input type="text" name='city' placeholder="Find your location...">
@@ -11,7 +11,7 @@
         </div>
     </div>
     <div class="forecast-table">
-				<div class="container">
+				<div class="container-fluid">
 					<div class="forecast-container">
 						<div class="today forecast">
 							<div class="forecast-header">
@@ -52,20 +52,182 @@
 			</div>
 
 			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 text-center"><h1>Weather Forecast</h1></div>
-					<div class="col py-2">
-						<div class="video"><iframe src="https://www.youtube.com/embed/AWdA7hdP4ZA?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe></div>
-					</div>
-					<div class="col py-2">
-						<div class="video"><iframe src="https://www.youtube.com/embed/I39RKjerJss?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe></div>
-					</div>
-					<div class="col py-2">
-						<div class="video"><iframe src="https://www.youtube.com/embed/Dkx4LYeFnVY?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe></div>
-					</div>
-					
-				</div>
+				 <h2 id='daily-forecast'> Our Daily Weather Forecast</h2>
+				 <div id="forecast_vid"> <iframe width="900" height="600"  src="https://www.youtube.com/embed/efis3JRvWxo" allowfullscreen></iframe> </div>
 			</div>
+
+	<section class="g-bg-secondary">
+      <div class="container g-py-100">
+		<h2 class="text-center text-lg">SERVICES</h2>
+        <!-- Icon Blocks -->
+        <div class="row">
+          <div class="col-lg-6 g-mb-30">
+            <!-- Icon Blocks -->
+            <div class="u-shadow-v19 g-bg-white rounded g-pa-30">
+              <div class="media g-mb-15">
+                <div class="d-flex mr-4">
+                  <span class="g-color-gray-dark-v4 g-font-size-26">
+                    <i class="icon-communication-109 u-line-icon-pro"></i>
+                  </span>
+                </div>
+                <div class="media-body">
+				  <img width="450" height="275" class="rounded" src="{% static 'img/aviation.jpg' %}" alt="image">
+                  <h3 class="h5 g-color-black mb-20">Aviation</h3>
+                  <div class="g-width-30 g-brd-bottom g-brd-gray-dark-v5 g-my-15"></div>
+                  <p class="g-color-gray-dark-v4 g-mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum sapiente veniam aliquid, perferendis provident autem alias ex laudantium, unde fugit numquam soluta praesentium animi. Earum blanditiis nisi vero fugiat quam.</p>
+                </div>
+              </div>
+              <a class="btn u-btn-primary g-brd-2 g-brd-white g-font-size-13 g-rounded-50 g-pl-20 g-pr-15 g-py-9" href="#">
+                Read more
+                <span class="align-middle u-icon-v3 g-width-16 g-height-16 g-color-black g-bg-white g-font-size-11 rounded-circle ml-3">
+                  <i class="fa fa-angle-right"></i>
+                </span>
+              </a>
+            </div>
+            <!-- End Icon Blocks -->
+          </div>
+
+          <div class="col-lg-6 g-mb-30">
+            <!-- Icon Blocks -->
+            <div class="u-shadow-v19 g-bg-white rounded g-pa-30">
+              <div class="media g-mb-15">
+                <div class="d-flex mr-4">
+                  <span class="g-color-gray-dark-v4 g-font-size-26">
+                    <i class="icon-communication-076 u-line-icon-pro"></i>
+                  </span>
+                </div>
+                <div class="media-body">
+					<img width="450" height="275" class="rounded" src="{% static 'img/agro.jpg' %}" alt="image">
+					<h3 class="h5 g-color-black mb-20">AgroMet</h3>
+                  <div class="g-width-30 g-brd-bottom g-brd-gray-dark-v5 g-my-15"></div>
+                  <p class="g-color-gray-dark-v4 g-mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero error enim explicabo, tenetur iste vitae voluptatum quae iusto. Repellendus dicta accusamus itaque vero dolorum inventore nihil nisi fugiat odio mollitia.</p>
+                </div>
+              </div>
+              <a class="btn u-btn-primary g-brd-2 g-brd-white g-font-size-13 g-rounded-50 g-pl-20 g-pr-15 g-py-9" href="#">
+                Read more
+                <span class="align-middle u-icon-v3 g-width-16 g-height-16 g-color-black g-bg-white g-font-size-11 rounded-circle ml-3">
+                  <i class="fa fa-angle-right"></i>
+                </span>
+              </a>
+            </div>
+            <!-- End Icon Blocks -->
+          </div>
+        </div>
+        <!-- End Icon Blocks -->
+
+        <!-- Icon Blocks -->
+        <div class="row">
+          <div class="col-lg-6 g-mb-30">
+            <!-- Icon Blocks -->
+            <div class="u-shadow-v19 g-bg-white rounded g-pa-30">
+              <div class="media g-mb-15">
+                <div class="d-flex mr-4">
+                  <span class="g-color-gray-dark-v4 g-font-size-26">
+                    <i class="icon-education-128 u-line-icon-pro"></i>
+                  </span>
+                </div>
+                <div class="media-body">
+					<img width="450" height="275" class="rounded" src="{% static 'img/hydro.jpg' %}" alt="image">
+					<h3 class="h5 g-color-black mb-20">HydroMet</h3>
+					<div class="g-width-30 g-brd-bottom g-brd-gray-dark-v5 g-my-15"></div>
+					<p class="g-color-gray-dark-v4 g-mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero error enim explicabo, tenetur iste vitae voluptatum quae iusto. Repellendus dicta accusamus itaque vero dolorum inventore nihil nisi fugiat odio mollitia.</p>
+				  </div>
+              </div>
+              <a class="btn u-btn-primary g-brd-2 g-brd-white g-font-size-13 g-rounded-50 g-pl-20 g-pr-15 g-py-9" href="#">
+                Read more
+                <span class="align-middle u-icon-v3 g-width-16 g-height-16 g-color-black g-bg-white g-font-size-11 rounded-circle ml-3">
+                  <i class="fa fa-angle-right"></i>
+                </span>
+              </a>
+            </div>
+            <!-- End Icon Blocks -->
+          </div>
+
+          <div class="col-lg-6 g-mb-30">
+            <!-- Icon Blocks -->
+            <div class="u-shadow-v19 g-bg-white rounded g-pa-30">
+              <div class="media g-mb-15">
+                <div class="d-flex mr-4">
+                  <span class="g-color-gray-dark-v4 g-font-size-26">
+                    <i class="icon-communication-128 u-line-icon-pro"></i>
+                  </span>
+                </div>
+                <div class="media-body">
+					<img width="450" height="275" class="rounded" src="{% static 'img/marine.jpg' %}" alt="image">
+					<h3 class="h5 g-color-black mb-20">MarineMet</h3>
+					<div class="g-width-30 g-brd-bottom g-brd-gray-dark-v5 g-my-15"></div>
+					<p class="g-color-gray-dark-v4 g-mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero error enim explicabo, tenetur iste vitae voluptatum quae iusto. Repellendus dicta accusamus itaque vero dolorum inventore nihil nisi fugiat odio mollitia.</p>
+                </div>
+              </div>
+              <a class="btn u-btn-primary g-brd-2 g-brd-white g-font-size-13 g-rounded-50 g-pl-20 g-pr-15 g-py-9" href="#">
+                Read more
+                <span class="align-middle u-icon-v3 g-width-16 g-height-16 g-color-black g-bg-white g-font-size-11 rounded-circle ml-3">
+                  <i class="fa fa-angle-right"></i>
+                </span>
+              </a>
+            </div>
+            <!-- End Icon Blocks -->
+          </div>
+        </div>
+        <!-- End Icon Blocks -->
+
+        <!-- Icon Blocks -->
+        <div class="row">
+          <div class="col-lg-6 g-mb-30">
+            <!-- Icon Blocks -->
+            <div class="u-shadow-v19 g-bg-white rounded g-pa-30">
+              <div class="media g-mb-15">
+                <div class="d-flex mr-4">
+                  <span class="g-color-gray-dark-v4 g-font-size-26">
+                    <i class="icon-communication-131 u-line-icon-pro"></i>
+                  </span>
+                </div>
+                <div class="media-body">
+					<img src="{% static 'img/live-camera-2.jpg' %}" alt="image">
+					<h3 class="h5 g-color-black mb-20">Research</h3>
+					<div class="g-width-30 g-brd-bottom g-brd-gray-dark-v5 g-my-15"></div>
+					<p class="g-color-gray-dark-v4 g-mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero error enim explicabo, tenetur iste vitae voluptatum quae iusto. Repellendus dicta accusamus itaque vero dolorum inventore nihil nisi fugiat odio mollitia.</p>
+                </div>
+              </div>
+              <a class="btn u-btn-primary g-brd-2 g-brd-white g-font-size-13 g-rounded-50 g-pl-20 g-pr-15 g-py-9" href="#">
+                Read more
+                <span class="align-middle u-icon-v3 g-width-16 g-height-16 g-color-black g-bg-white g-font-size-11 rounded-circle ml-3">
+                  <i class="fa fa-angle-right"></i>
+                </span>
+              </a>
+            </div>
+            <!-- End Icon Blocks -->
+          </div>
+
+          <div class="col-lg-6 g-mb-30">
+            <!-- Icon Blocks -->
+            <div class="u-shadow-v19 g-bg-white rounded g-pa-30">
+              <div class="media g-mb-15">
+                <div class="d-flex mr-4">
+                  <span class="g-color-gray-dark-v4 g-font-size-26">
+                    <i class="icon-communication-130 u-line-icon-pro"></i>
+                  </span>
+                </div>
+                <div class="media-body">
+					<img src="{% static 'img/live-camera-2.jpg' %}" alt="image">
+					<h3 class="h5 g-color-black mb-20">Public Met</h3>
+					<div class="g-width-30 g-brd-bottom g-brd-gray-dark-v5 g-my-15"></div>
+					<p class="g-color-gray-dark-v4 g-mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero error enim explicabo, tenetur iste vitae voluptatum quae iusto. Repellendus dicta accusamus itaque vero dolorum inventore nihil nisi fugiat odio mollitia.</p>
+                </div>
+              </div>
+              <a class="btn u-btn-primary g-brd-2 g-brd-white g-font-size-13 g-rounded-50 g-pl-20 g-pr-15 g-py-9" href="#">
+                Read more
+                <span class="align-middle u-icon-v3 g-width-16 g-height-16 g-color-black g-bg-white g-font-size-11 rounded-circle ml-3">
+                  <i class="fa fa-angle-right"></i>
+                </span>
+              </a>
+            </div>
+            <!-- End Icon Blocks -->
+          </div>
+        </div>
+        <!-- End Icon Blocks -->
+      </div>
+    </section>
 
 
 
