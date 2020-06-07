@@ -1,31 +1,31 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block content %}
     <main class="main-content">
 				<div class="container-fluid">
 					<div class="breadcrumb">
-						<a href="{% url 'home' %}">Home</a>
-						<span>News</span>
+						<a href="{% url 'home'%}">Home</a>
+						<span>{{service.title}}</span>
 					</div>
 				</div>
 				<div class="fullwidth-block">
 					<div class="container-fluid">
 						<div class="row">
 							<div class="content col-md-8">
-                            {% for news in news %}
-								<div class="post">
-                                    <p class="mb-2">{{news.date_posted}} <i>by</i> <span><i><small>{{news.author}}</small></i></span></p>
-									<h2 class="entry-title">{{news.title}}</h2>
-									<div class="featured-image"><img src="{{news.image.url}}" alt=""></div>
-									<p>{{news.content|truncatechars:"200"|safe}}</p>
-									<a href="{% url 'detail_news' news.id %}" class="button">Read more</a>
+								<div class="post single">
+									<h2 class="entry-title">{{service.title}}</h2>
+									<div class="featured-image"><img src="{{service.image.url}}" alt=""></div>
+									
+									<div class="entry-content">
+										<p>{{service.content|safe}}</p>
+									</div>
+
 								</div>
-                            {% endfor %}
+
 							</div>
 							<div class="sidebar col-md-3 col-md-offset-1">
 								<div class="widget">
-									<h3 class="widget-title">Latest News</h3>
+									<h3 class="widget-title">Hot News</h3>
 									<ul class="arrow-list">
 										<li><a href="#">Accusamus dignissimos</a></li>
 										<li><a href="#">Ducimus praesentium</a></li>
@@ -34,7 +34,6 @@
 										<li><a href="#">Occaecati provident dolor</a></li>
 									</ul>
 								</div>
-
 							</div>
 						</div>
 					</div>

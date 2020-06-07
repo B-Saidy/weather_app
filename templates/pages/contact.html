@@ -16,9 +16,9 @@
 								<div class="map" data-latitude="-6.897789" data-longitude="107.621735"></div>
 								<div class="contact-info">
 									<address>
-										<img src="images/icon-marker.png" alt="">
-										<p>Company Name INC. <br>
-										2803 Avenue Street, Los Angeles</p>
+										<!-- <img width="100px" height= " 100px" src="{% static 'img/arch.jpg' %}" alt=""> -->
+										<p>Gambia Department of Water Resource<br>
+										14 Marina Parade,Banjul, The Gambia</p>
 									</address>
 									
 									<a href="#"><img src="images/icon-phone.png" alt="">+1 800 314 235</a>
@@ -29,16 +29,16 @@
 						<div class="col-md-6 col-md-offset-1">
 							<h2 class="section-title">Contact us</h2>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi consectetur inventore ducimus, facilis, numquam id soluta omnis eius recusandae nesciunt vero repellat harum cum. Nisi facilis odit hic, ipsum sed!</p>
-							<form action="#" class="contact-form">
+							<form action="{% url 'contacts' %} " method="post" class="contact-form">
+								{% csrf_token %}
 								<div class="row">
-									<div class="col-md-6"><input type="text" placeholder="Your name..."></div>
-									<div class="col-md-6"><input type="text" placeholder="Email Addresss..."></div>
+									<div class="col-md-6"><input type="text" name="name" placeholder="Your name..."></div>
+									<div class="col-md-6"><input type="text" name="email" placeholder="Email Addresss..."></div>
 								</div>
 								<div class="row">
-									<div class="col-md-6"><input type="text" placeholder="Company name..."></div>
-									<div class="col-md-6"><input type="text" placeholder="Website..."></div>
+									<div class="col-md-12"><input type="text" name="company" placeholder="Company name..."></div>
 								</div>
-								<textarea name="" placeholder="Message..."></textarea>
+								<textarea name="text" placeholder="Message..."></textarea>
 								<div class="text-right">
 									<input type="submit" placeholder="Send message">
 								</div>

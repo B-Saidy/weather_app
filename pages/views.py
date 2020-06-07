@@ -1,5 +1,5 @@
-from django.shortcuts import render, get_object_or_404, Http404
-from . models import News, Project
+from django.shortcuts import render, get_object_or_404, Http404,redirect
+from . models import News, Project, Service,Contact, Media
 import os
 import requests
 import pyowm
@@ -31,6 +31,11 @@ def home(request):
             # getting a three_hourly weather forecast 
             f = list(fc.get_forecast())[:8]
             weather_data = []
+            services = Service.objects.all()
+            media = Media.objects.all()
+            media_items = []
+            for m in media:
+                media_items.append(m)
             for weather in f:
                 weather_con = {
                     'temp' : round(weather.get_temperature(unit='celsius')['temp']),
@@ -43,7 +48,11 @@ def home(request):
             context = {
                 'c_weather':c_weather[0],
                 'weather': weather_data,
-                'city':loc.get_name()
+                'city':loc.get_name(),
+                'services' : services,
+                'caro1': media_items[0],
+                'caro2': media_items[1],
+                'caro3': media_items[2],
             }
             return render(request, 'pages/home.html', context)
         else:
@@ -67,6 +76,11 @@ def home(request):
             # getting a three_hourly weather forecast 
             f = list(fc.get_forecast())[:8]
             weather_data = []
+            services = Service.objects.all()
+            media = Media.objects.all()
+            media_items = []
+            for m in media:
+                media_items.append(m)
             for weather in f:
                 weather_con = {
                     'temp' : round(weather.get_temperature(unit='celsius')['temp']),
@@ -79,11 +93,15 @@ def home(request):
             context = {
                 'c_weather':c_weather[0],
                 'weather': weather_data,
-                'city':city
+                'city':city,
+                'services': services,
+                'caro1': media_items[0],
+                'caro2': media_items[1],
+                'caro3': media_items[2],
             }
             return render(request, 'pages/home.html', context)
     except:
-        raise Http404
+        return redirect('api_timeout')
 
 
 def news(request):
@@ -115,4 +133,36 @@ def detail_project(request, id):
 
 
 def contacts(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        email = request.POST['email']
+        company = request.POST['company']
+        text = request.POST['text']
+        
+        contact = Contact(name=name, email=email, company_name=company, text=text)
+        contact.save()
+        return redirect('contacts')
     return render(request, 'pages/contact.html')
+
+def service(request, id):
+    service = get_object_or_404(Service, id=id)
+    context = {
+        'service': service
+    }
+    return render(request, 'pages/service.html', context)
+
+def api_timeout(request):
+    services = Service.objects.all()
+    media = Media.objects.all()
+    media_items = []
+    for m in media:
+        media_items.append(m)
+    context = {
+        'services': services,
+        'caro1': media_items[0],
+        'caro2': media_items[1],
+        'caro3': media_items[2],
+    }
+    return render(request, 'pages/api_call_timeout.html', context)
+
+
