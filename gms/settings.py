@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('GMS_DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['gam-met-services.herokuapp.com']
+ALLOWED_HOSTS = ['gammet.herokuapp.com', 'localhost']
 
 
 # Application definition
